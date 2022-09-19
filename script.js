@@ -18,12 +18,15 @@ const createNote = () => {
 }
 
 const createTitle = () => {
-    const element = document.querySelector('.element')
+    const elements = document.querySelectorAll('.element')
     const noteTitle = document.createElement("h1");
     let titleValue = title.value;
-    element.appendChild(noteTitle);
-    noteTitle.classList.add('note-content')
-    return noteTitle.innerHTML = titleValue;
+    elements.forEach(element => {
+        element.appendChild(noteTitle);
+        noteTitle.classList.add('title-note')
+        return noteTitle.innerHTML = titleValue;
+    });
+    
 }
 
 const noteContent = (note) => {
