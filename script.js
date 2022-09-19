@@ -3,10 +3,10 @@ const title = document.querySelector('#title');
 const element = document.querySelectorAll('#element')
 const content = document.querySelector('#content')
 
-
 btncreate.addEventListener('click', () => {
     createNote();
     createTitle();
+    noteContent();
 })
 
 const createNote = () => {
@@ -21,6 +21,7 @@ const createTitle = () => {
     const elements = document.querySelectorAll('.element')
     const noteTitle = document.createElement("h1");
     let titleValue = title.value;
+
     elements.forEach(element => {
         element.appendChild(noteTitle);
         noteTitle.classList.add('title-note')
@@ -29,10 +30,15 @@ const createTitle = () => {
     
 }
 
-const noteContent = (note) => {
+const noteContent = () => {
+    const elements = document.querySelectorAll('.element')
     const contentParagraph = document.createElement("p");
-    contentParagraph.classList.add('.note-content');
-    let contentValue = document.createTextNode(content.value);
-    contentParagraph.appendChild(contentValue);
-    note.appendChild(contentValue)
+    const contentValue = document.createTextNode(content.value);
+
+    elements.forEach(element => {
+        element.appendChild(contentValue);
+        contentParagraph.classList.add('.note-content');
+        return contentParagraph.innerHTML = contentValue;
+    })
+    
 }
