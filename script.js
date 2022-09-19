@@ -1,11 +1,12 @@
 const btncreate = document.querySelector('#valid');
 const title = document.querySelector('#title');
 const element = document.querySelectorAll('#element')
-
+const content = document.querySelector('#content')
 
 
 btncreate.addEventListener('click', () => {
     createNote();
+    createTitle();
 })
 
 const createNote = () => {
@@ -14,12 +15,21 @@ const createNote = () => {
     noteContainer.appendChild(newNote);
     newNote.classList.add('element')
     newNote.id = 'element'
-    createTitle(newNote);
 }
 
-const createTitle = (newNote) => {
-    const noteTitle = document.createElement("p");
-    let titleValue = document.createTextNode(title.value)
-    noteTitle.appendChild(titleValue)
-    newNote.appendChild(titleValue)
+const createTitle = () => {
+    const element = document.querySelector('.element')
+    const noteTitle = document.createElement("h1");
+    let titleValue = title.value;
+    element.appendChild(noteTitle);
+    noteTitle.classList.add('note-content')
+    return noteTitle.innerHTML = titleValue;
+}
+
+const noteContent = (note) => {
+    const contentParagraph = document.createElement("p");
+    contentParagraph.classList.add('.note-content');
+    let contentValue = document.createTextNode(content.value);
+    contentParagraph.appendChild(contentValue);
+    note.appendChild(contentValue)
 }
