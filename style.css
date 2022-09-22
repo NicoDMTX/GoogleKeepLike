@@ -75,7 +75,7 @@ button {
 
 .element {
     width: 250px;
-    height: 250px;
+    height: 200px;
     margin: 10px;
     border-radius: 15px;
     box-shadow: -1px 4px 20px -5px #000000;
@@ -90,4 +90,25 @@ button {
     padding: 0;
     margin: 0;
     color: red;
+}
+
+h1 {
+    line-break: anywhere;
+}
+
+p {
+    line-break: anywhere;
+    padding: 0 5px;
+}
+
+button {
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(45,81,117,1) 100%);
+    border-style: none;
+    width: 80px;
+    height: 35px;
+    box-shadow: -1px 4px 10px -5px #000000;
+    padding: 0 10px;
+    cursor: pointer;
+    margin-left: 10px;
 }
