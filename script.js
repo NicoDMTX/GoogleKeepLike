@@ -32,9 +32,16 @@ class Note {
         return container;
     }
 
-    updateContent(target) {
+    updateContent() {
         const content = document.querySelector('#contentText')
         return content;
+    }
+
+    deleteNote(target) {
+        const div = target
+        div.remove();
+        return div.classList.add('deleted-element')
+         
     }
 
 }
@@ -61,6 +68,15 @@ btncreate.addEventListener('click', () => {
         const noteBuilder = new Note()
         const noteUpdated = noteBuilder.updateContent()
         console.log(noteUpdated)
+    })
+
+    const btnDelete = document.querySelector('#delete')
+
+    btnDelete.addEventListener('click', () => {
+        const noteBuilder = new Note();
+        const element = document.querySelector('.element')
+        const noteDeleted = noteBuilder.deleteNote(element);
+        return noteDeleted;
     })
     
 })

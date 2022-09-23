@@ -112,3 +112,7 @@ button {
     cursor: pointer;
     margin-left: 10px;
 }
+
+.deleted-element {
+    display: none;
+}
