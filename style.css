@@ -74,9 +74,8 @@ button {
 }
 
 .element {
-    width: 250px;
-    height: 200px;
     margin: 10px;
+    max-width: 1600px;
     border-radius: 15px;
     box-shadow: -1px 4px 20px -5px #000000;
     display: flex;
@@ -93,7 +92,9 @@ button {
 }
 
 h1 {
-    line-break: anywhere;
+    white-space: break-spaces;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 p {
